@@ -47,7 +47,7 @@
                     Effective Solutions
                     for Your Business
                 </h1>
-                <button class="banner-btn" type="button">Order Service</button>
+                <button class="banner-btn" data-modal-open type="button">Order Service</button>
             </div>
         </section>
 
@@ -604,6 +604,22 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" data-modal-close class="modal-close">
+                <svg class="modal-close-btn">
+                    <use href="#icon-close-black-18dp-btn">
+                        <symbol id="icon-close-black-18dp-btn" viewBox="0 0 32 32">
+                            <path
+                                d="M32 3.224l-3.224-3.224-12.776 12.776-12.776-12.776-3.224 3.224 12.776 12.776-12.776 12.776 3.224 3.224 12.776-12.776 12.776 12.776 3.224-3.224-12.776-12.776 12.776-12.776z">
+                            </path>
+                        </symbol>
+                    </use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
