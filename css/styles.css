@@ -4,18 +4,22 @@ html,
     --main-title-color: #2E2F42;
     --main-text-color: #434455;
     --main-team-color: #F4F4FD;
+    --team-card-box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     --logo-color: #4D5AE5;
     --banner-title-color: #FFFFFF;
     --banner-background-color: #2E2F42;
     --banner-btn-color: #FFFFFF;
     --footer-logo-color: #F4F4FD;
     --footer-text-color: #E7E9FC;
+    --footer-soc-link-background-color: rgba(255, 255, 255, 0.1);
+    --footer-soc-link-hover-background-color: #31D0AA;
     --portfolio-btn-color: #4D5AE5;
     --portfolio-btn-background-color: #F4F4FD;
     --portfolio-btn-border-color: #E7E9FC;
     --hover-focus-color: #404BBF;
     --header-logo-font-family: 'Raleway', sans-serif;
     --header-logo-font-weight: 800;
+    --current-after-background-color: #404BBF;
     --font-weight: 500;
     --header-logo-font-size: 18px;
     --header-logo-line-height: 1.33;
@@ -32,6 +36,16 @@ html,
     --team-soc-link: #4D5AE5;
     --team-soc-link-hoover: #404BBF;
     --qualities-img-list: #F4F4FD;
+    --project-item-box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    --projects-card-border: 1px solid #E7E9FC;
+    --project-top-text-background-color: #4D5AE5;
+    --modal-close-btn-hover: #FFFFFF;
+    --modal-close-hover: #404BBF;
+    --modal-close-border: 1px solid rgba(0, 0, 0, 0.1);
+    --modal-close-background-color: #E7E9FC;
+    --modal-background-color: #FCFCFC;
+    --modal-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    --backdrop-background-color: rgba(46, 47, 66, 0.4);
 }
 
 h1, 
@@ -120,6 +134,23 @@ body {
     letter-spacing: var(--letter-spacing);
     text-decoration: none;
     color: var(--main-title-color);
+    transition: color 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current {
+    position: relative;
+}
+
+.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -24px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--current-after-background-color);
 }
 
 .header-link:hover,
@@ -151,6 +182,8 @@ body {
     line-height: 24px;
     text-decoration: none;
     color: var(--main-text-color);
+    transition: color 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-link:hover,
@@ -167,8 +200,6 @@ body {
     padding-bottom: 188px;
     background-image: var(--gra), url(../images/people-office\ 1.jpg);
     max-width: 1440px;
-    
-    
 }
 
 .section{
@@ -204,6 +235,9 @@ body {
     display: block;
     justify-content: center;
     margin: auto;
+    cursor: pointer;
+    transition: color 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .banner-btn:hover,
@@ -315,6 +349,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    transition: background-color 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-icon {
@@ -322,7 +358,7 @@ body {
 }
 
 .team-soc-link:is(:hover, :focus) {
-    background: var(--team-soc-link-hoover);
+    background-color: var(--team-soc-link-hoover);
 }
 
 .main-job {
@@ -379,7 +415,7 @@ body {
     text-align: center;
     padding-top: 32px;
     padding-bottom: 32px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: var(--team-card-box-shadow);
 }
 
 .main-customers {
@@ -416,6 +452,8 @@ body {
     height: 100%;
     justify-content: center;
     align-items: center;
+    transition: border 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:is(:hover, :focus) {
@@ -428,6 +466,8 @@ body {
 
 .main-customer-icon {
     fill: var(--main-customer-icon);
+    transition: fill 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -495,15 +535,17 @@ body {
 .footer-soc-link {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: var(--footer-soc-link-background-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    transition: background-color 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:is(:hover, :focus) {
-    background: #31D0AA;
+    background-color: var(--footer-soc-link-hover-background-color);
 }
 
 .footer-soc-icon {
@@ -545,10 +587,12 @@ body {
     color: var(--portfolio-btn-color);
     letter-spacing: 0.04em;
     padding: 12px 24px;
+    transition: color 250ms linear, background-color 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn:hover {
-    background: var(--hover-focus-color);
+    background-color: var(--hover-focus-color);
     color: var(--banner-title-color);
     flex: none;
     cursor: pointer;
@@ -565,14 +609,16 @@ body {
     margin-right: 0px;
 }
 
-.project-item:is(:hover, :focus) {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
 .project-item {
     color: var(--banner-title-color);
     flex-direction: column;
-    display: flex;   
+    display: flex;
+    transition: box-shadow 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item:is(:hover, :focus) {
+    box-shadow: var(--project-item-box-shadow);
 }
 
 .project-item:hover .project-top-text {
@@ -601,10 +647,11 @@ body {
     top: 0;
     font-size: var(--font-size);
     line-height: var(--line-height); color: var(--main-team-color);
-    background: #4D5AE5;
+    background-color: var(--project-top-text-background-color);
     padding: 40px 32px 164px 32px;
     transform: translateY(100%);
-    transition: transform 200ms linear;
+    transition: transform 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects-card {
@@ -612,9 +659,9 @@ body {
     padding-left: 16px;
     padding-bottom: 32px;
     background-color: var(--banner-title-color);
-    border-left: 1px solid #E7E9FC;
-    border-right: 1px solid #E7E9FC;
-    border-bottom: 1px solid #E7E9FC;
+    border-left: var(--projects-card-border);
+    border-right: var(--projects-card-border);
+    border-bottom: var(--projects-card-border);
 }
 
 .projects-subtitle {
@@ -641,7 +688,9 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(46, 47, 66, 0.4);
+    background-color: var(--backdrop-background-color);
+    transition: opacity 250ms linear, visibility 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -654,34 +703,44 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     width: 408px;
     padding: 24px;
     min-height: 576px;
-    background-color: #FCFCFC;
+    background-color: var(--modal-background-color);
     border-radius: 4px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--modal-box-shadow);
+    transition: transform 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
 }
 
 .modal-close {
     width: 24px;
     height: 24px;
-    background-color: #E7E9FC;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--modal-close-background-color);
+    border: var(--modal-close-border);
     border-radius: 50%;
     display: block;
     margin-left: auto;
+    transition: background-color 250ms linear, fill 250ms linear;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
-    width: 8px;
-    height: 8px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-close:hover {
-    background-color: #404BBF;
+    background-color: var(--modal-close-hover);
 }
 
 .modal-close:is(:hover, :focus) .modal-close-btn {
-    fill: #FFFFFF;
+    fill: var(--modal-close-btn-hover);
 }
